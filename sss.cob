@@ -3,6 +3,8 @@
       *AUTHOR. ERIC CONRAD.
       *DESCRIPTION. A program to solve a triangle given its three
       *    sides.
+      *HISTORY.
+      *    4Jan2021 - Apply rounding in computations.
 
        ENVIRONMENT DIVISION.
        CONFIGURATION SECTION.
@@ -66,7 +68,7 @@
            PERFORM 100-GET-SIDE.
            MOVE X TO C.
 
-           COMPUTE S = (A + B + C) / 2
+           COMPUTE S ROUNDED = (A + B + C) / 2
                ON SIZE ERROR
                    DISPLAY "Semiperimeter: Arithmetic overflow"
                    STOP RUN.
@@ -136,9 +138,9 @@
            END-IF.
 
        200-LAW-OF-COSINES.
-           COMPUTE ZETA =
+           COMPUTE ZETA ROUNDED =
                ACOS((X * X + Y * Y - Z * Z) / (2 * X * Y)).
 
        300-TO-DEGREES.
-           COMPUTE ZETA = 180 * XI / PI.
+           COMPUTE ZETA ROUNDED = 180 * XI / PI.
 
