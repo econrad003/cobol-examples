@@ -1,0 +1,62 @@
+Triangle Calculator v0.1 by Eric Conrad
+Copyright 2021 by Eric Conrad.
+
+License: MIT style license.  Se file LICENSE-triangle for details.
+
+Description
+-----------
+A triangle calculator written entirely in COBOL.  It uses intrinsic
+functions for trigonometric calculations.
+
+Build
+-----
+This compiles with GnuCOBOL 3.7 on Windows with CygWin.
+(It should compile with GnuCOBOL 2.0 or later.  The gmp libraries are
+probably required for trigonometric calculations.)
+
+To build, compile and link using the enclosed makefile.  It should work
+as long as you have GnuCOBOL 2.0 or later.
+
+Execute
+-------
+In a Unix-like shell (such as bash or tcsh), execute the main file
+(triangle in Linux or other Unix-like operating systems, or triangle.exe
+in Windows with a posix overlay like CygWin or MinGW/MSys) in the usual
+way:
+    ./triangle
+
+Then follow the prompts.  Enter three sides or two sides and an angle
+or one side and two angles.  Then solve.
+
+The commands are case-sensitive.  Commands a, b and c are for entering
+sides, commands A, B and C for angles.  To change the unit of angle
+measure, the command m rotates from radians (default) to degrees to
+grads (percentages of a right angle) to revolutions and back to radians.
+
+The show command s displays the known sides and angles.  (Angles are
+displayed using the current units of measure.)  The dump command d gives
+the same information in a more primitive format (radians for angles,
+values in floating point notation, with negative values [-1] for unknown
+quantities).
+
+When sufficient data is entered, the solve command = will solve the
+triangle, reporting any encountered errors.  The results are, of course,
+approximate.  If there are two solutions, one can be saved for subsequent
+calculations.
+
+File Contents
+-------------
+LICENSE-triangle
+makefile
+README-triangle
+triangle.cob
+triangle.cpy
+triangle-cosToC.cob
+triangle-cosToGamma.cob
+triangle-dump.cob
+triangle-exec.cob
+triangle-init.cob
+triangle-show.cob
+triangle-sinToC.cob
+triangle-sinToGamma.cob
+triangle-solve.cob
